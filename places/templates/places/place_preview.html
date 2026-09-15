@@ -1,0 +1,53 @@
+{% load static %}
+
+<article class="place-card">
+
+    <img
+        class="place-image"
+        src="{% static 'places/images/default-place.jpg' %}"
+        alt="{{ place.name }}"
+    >
+
+    <div class="place-content">
+
+        <div class="place-top">
+            <span class="place-type">
+                {{ place.type }}
+            </span>
+
+            <span class="rating">
+                {% for star in "12345" %}
+                    {% if forloop.counter <= place.rating %}★{% else %}☆{% endif %}
+                {% endfor %}
+            </span>
+        </div>
+
+        <h2>
+            <a href="/places/{{ place.id }}/">
+                {{ place.name }}
+            </a>
+        </h2>
+
+        <p class="description">
+            {{ place.description|truncatewords:14 }}
+        </p>
+
+        <div class="place-meta">
+
+            <span>
+                {% if place.location %}
+                    {{ place.location }}
+                {% else %}
+                    Secret place 👀
+                {% endif %}
+            </span>
+
+            <span>
+                {{ place.created_at }}
+            </span>
+
+        </div>
+
+    </div>
+
+</article>

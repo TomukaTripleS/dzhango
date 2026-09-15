@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Places{% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'places/style.css' %}">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container header-content">
+        <a class="logo" href="/">
+            places.
+        </a>
+
+        <nav class="navigation">
+            <a href="/">Головна</a>
+            <a href="/places/">Мої місця</a>
+            <a href="/places/add/">Додати місце</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container main">
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>зроблено by 2muka), 2026</p>
+    </div>
+</footer>
+
+</body>
+</html>

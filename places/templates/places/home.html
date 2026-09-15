@@ -1,0 +1,23 @@
+{% extends "places/base.html" %}
+
+{% block title %}Places{% endblock %}
+
+{% block content %}
+<h1>Places</h1>
+<p>Ваші улюблені місця для вечері, прогулянок та розваг.</p>
+
+{% if places %}
+    <form method="post">
+        {% csrf_token %}
+        <button class="button" type="submit">
+            Куди піти сьогодні?
+        </button>
+    </form>
+{% else %}
+    <p>Спочатку <a href="/places/add/">додайте місце</a>.</p>
+{% endif %}
+
+{% if place %}
+    {% include "places/place_preview.html" %}
+{% endif %}
+{% endblock %}

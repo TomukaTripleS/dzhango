@@ -1,0 +1,50 @@
+{% extends "places/base.html" %}
+
+{% load static %}
+
+{% block title %}
+Мої місця
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div>
+        <p class="eyebrow">MY COLLECTION</p>
+        <h1>Улюблені місця</h1>
+        <p class="subtitle">
+            Місця, куди хочеться повернутися.
+        </p>
+    </div>
+
+    <a class="button" href="/places/add/">
+        + Додати місце
+    </a>
+</section>
+
+
+<section class="places-grid">
+
+    {% for place in places %}
+
+    {% include "places/place_preview.html" %}
+
+    {% empty %}
+
+    <div class="empty-state">
+        <h2>Тут поки порожньо</h2>
+
+        <p>
+            Додайте перше місце, куди вам хотілося б повернутися.
+        </p>
+
+        <a class="button" href="/places/add/">
+            Додати місце
+        </a>
+    </div>
+
+    {% endfor %}
+
+</section>
+
+{% endblock %}
