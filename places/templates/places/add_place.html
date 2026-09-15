@@ -1,0 +1,14 @@
+{% extends "places/base.html" %}
+
+{% block title %}Додати місце{% endblock %}
+
+{% block content %}
+<h1>Додати нове місце</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="button" type="submit">Додати місце</button>
+    <a href="/places/">Скасувати</a>
+</form>
+{% endblock %}

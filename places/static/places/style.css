@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header,
+footer {
+    background: white;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+footer {
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    border-bottom: none;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+main {
+    padding: 30px 0;
+}
+
+h1,
+h2 {
+    margin-top: 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #222;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.place-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.place-card img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.place-meta {
+    color: #666;
+    font-size: 14px;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+form p {
+    margin-bottom: 15px;
+}

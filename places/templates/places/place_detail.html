@@ -1,0 +1,31 @@
+{% extends "places/base.html" %}
+{% load static %}
+
+{% block title %}{{ place.name }}{% endblock %}
+
+{% block content %}
+<h1>{{ place.name }}</h1>
+
+<img src="{% static 'places/images/default-place.jpg' %}"
+     alt="{{ place.name }}" width="300">
+
+<p>{{ place.type }}</p>
+{{ place.description|linebreaks }}
+
+<p>
+    {% if place.location %}
+        {{ place.location }}
+    {% else %}
+        Secret place👀
+    {% endif %}
+</p>
+
+<p>
+    {% for star in "12345" %}
+        {% if forloop.counter <= place.rating %}★{% else %}☆{% endif %}
+    {% endfor %}
+</p>
+
+<p>{{ place.created_at }}</p>
+<a href="/places/">До списку місць</a>
+{% endblock %}
